@@ -1,0 +1,24 @@
+name: Tests
+on: [ push ]
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [ chrome, firefox, edge ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: current
+      - name: Install dependencies
+        run: yarn install
+      - name: Build project
+        run: yarn run build
+      - name: Run cypress tests
+        uses: cypress-io/github-action@v4
+        with: 
+          browser: "${{ matrix.browser }}"

@@ -1,0 +1,37 @@
+{
+  "name": "@glhd/alpine-wizard",
+  "version": "0.0.1",
+  "description": "Multi-step wizard helpers for Alpine.js",
+  "main": "dist/wizard.cjs.js",
+  "exports": {
+    ".": {
+      "require": "./dist/wizard.cjs.js",
+      "default": "./dist/wizard.esm.js"
+    },
+    "./browser": {
+      "default": "./dist/wizard.cdn.min.js"
+    }
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/"
+  ],
+  "repository": "https://github.com/glhd/alpine-wizard.git",
+  "author": "Chris Morrell <inxilpro@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "node ./build.js",
+    "watch": "node ./build.js --watch",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "alpinejs": "^3.10.2",
+    "cypress": "^10.1.0",
+    "esbuild": "^0.14.43"
+  },
+  "dependencies": {
+    "validatorjs": "^3.22.1"
+  }
+}

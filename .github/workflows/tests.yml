@@ -2,6 +2,7 @@ name: Tests
 on: [ push ]
 jobs:
   cypress:
+    name: Cypress
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -22,3 +23,15 @@ jobs:
         uses: cypress-io/github-action@v4
         with: 
           browser: "${{ matrix.browser }}"
+      - name: Upload cypress screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - name: Upload cypress videos
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos

@@ -1,6 +1,6 @@
 {
   "name": "@glhd/alpine-wizard",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Multi-step wizard helpers for Alpine.js",
   "main": "dist/wizard.cjs.js",
   "module": "dist/wizard.esm.js",
@@ -23,6 +23,7 @@
   "author": "Chris Morrell <inxilpro@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
+    "prepare": "node ./build.js",
     "build": "node ./build.js",
     "watch": "node ./build.js --watch",
     "test": "cypress run"

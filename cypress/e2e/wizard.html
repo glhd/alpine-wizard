@@ -1,0 +1,48 @@
+<html lang="en">
+<body>
+
+<div x-data="{ name: '', age: 0, coppa: false }">
+	<div x-wizard:step id="intro-step">
+		Introduction
+	</div>
+	<div x-wizard:step="age > 0" id="age-step">
+		Your age: <input id="age-input" x-model.number="age" />
+	</div>
+	<div x-wizard:if="age < 13" x-wizard:step="coppa === true" id="coppa-step">
+		<input type="checkbox" id="coppa-input" x-model="coppa" />
+		Parent or guardian consent
+	</div>
+	<div x-wizard:step="'' !== name.trim()" id="name-step">
+		Your name: <input id="name-input" x-model="name" />
+	</div>
+	
+	<button
+		id="back-button"
+		@click="$wizard.back()"
+		:disabled="$wizard.cannotGoBack()"
+	>
+		Back
+	</button>
+	<button
+		id="forward-button"
+		@click="$wizard.forward()"
+		:disabled="$wizard.cannotGoForward()"
+		x-show="$wizard.isNotLast()"
+	>
+		Forward
+	</button>
+	<button
+		id="submit-button"
+		:disabled="$wizard.isNotComplete()"
+		x-show="$wizard.isLast()"
+		type="submit"
+	>
+		Submit
+	</button>
+</div>
+
+<script src="../../dist/wizard.cdn.js"></script>
+<script src="../../node_modules/alpinejs/dist/cdn.js"></script>
+
+</body>
+</html>

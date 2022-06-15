@@ -1,0 +1,15 @@
+<html lang="en">
+<body>
+
+<div x-data="{ name: '' }">
+	<div x-wizard:step.rules="{ name: 'required|min:2' }">
+		Name: <input x-model="name" id="name" />
+	</div>
+	<div id="status" x-text="$wizard.isComplete() ? 'Complete' : 'Incomplete'"></div>
+</div>
+
+<script src="../../dist/wizard.cdn.js"></script>
+<script src="../../node_modules/alpinejs/dist/cdn.js"></script>
+
+</body>
+</html>

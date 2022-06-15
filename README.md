@@ -1,6 +1,7 @@
 # Alpine Wizard
 
 [![Tests](https://github.com/glhd/alpine-wizard/actions/workflows/tests.yml/badge.svg)](https://github.com/glhd/alpine-wizard/actions/workflows/tests.yml)
+[![GitHub license](https://img.shields.io/github/license/glhd/alpine-wizard)](https://github.com/glhd/alpine-wizard/blob/main/LICENSE)
 
 > Multi-step wizard helpers for Alpine.js
 
@@ -74,3 +75,5 @@ yarn add @glhd/alpine-wizard
     
 </form>
 ```
+
+[![Try it out](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/zealous-sun-8xoswh?fontsize=14&hidenavigation=1&theme=dark)

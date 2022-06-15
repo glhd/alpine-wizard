@@ -1,7 +1,7 @@
 # Alpine Wizard
 
 [![Tests](https://github.com/glhd/alpine-wizard/actions/workflows/tests.yml/badge.svg)](https://github.com/glhd/alpine-wizard/actions/workflows/tests.yml)
-[![GitHub license](https://img.shields.io/github/license/glhd/alpine-wizard)](https://github.com/glhd/alpine-wizard/blob/main/LICENSE)
+[![npm version](https://badge.fury.io/js/@glhd%2Falpine-wizard.svg)](https://www.npmjs.com/package/@glhd/alpine-wizard)
 
 > Multi-step wizard helpers for Alpine.js
 

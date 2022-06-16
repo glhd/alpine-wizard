@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/@glhd%2Falpine-wizard.svg)](https://www.npmjs.com/package/@glhd/alpine-wizard)
 
 This package provides an Alpine directive (`x-wizard`) and a magic helper (`$wizard`) that
-allow you to quickly build multi-step wizards using Alpine.js.
+allow you to quickly build multi-step wizards using Alpine.js (only 1.1 kB gzipped).
 
   - [Installation](#installation)
   - [Usage](#usage)

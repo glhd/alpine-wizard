@@ -1,6 +1,6 @@
 {
   "name": "@glhd/alpine-wizard",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Multi-step wizard helpers for Alpine.js",
   "main": "dist/wizard.cjs.js",
   "module": "dist/wizard.esm.js",
@@ -30,8 +30,10 @@
   },
   "devDependencies": {
     "alpinejs": "^3.10.2",
+    "brotli-size": "^4.0.0",
     "cypress": "^10.1.0",
-    "esbuild": "^0.14.43"
+    "esbuild": "^0.14.43",
+    "gzip-size": "^7.0.0"
   },
   "dependencies": {
     "validatorjs": "^3.22.1"

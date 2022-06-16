@@ -90,6 +90,29 @@ const initWizardRoot = (Alpine) => {
 		nextIndex() {
 			return findNextIndex(this.steps, this.current_index, 1);
 		},
+		progress() {
+			let complete = 0;
+			let total = 0;
+			
+			for (let index = 0; index < this.steps.length; index++) {
+				const step = this.steps[index];
+				
+				if (!step.is_applicable) {
+					continue;
+				}
+				
+				total++;
+				
+				if (index <= this.current_index && step.is_complete) {
+					complete++;
+				}
+			}
+			
+			const incomplete = total - complete;
+			const percentage = `${ Math.floor((complete / total) * 100)}%`;
+			
+			return { total, complete, incomplete, percentage };
+		},
 		isFirst() {
 			return null === this.previousIndex();
 		},
@@ -108,6 +131,9 @@ const initWizardRoot = (Alpine) => {
 		},
 		isNotComplete() {
 			return !this.isComplete();
+		},
+		isIncomplete() {
+			return this.isNotComplete();
 		},
 		canGoForward() {
 			return this.current().is_complete

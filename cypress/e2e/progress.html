@@ -1,0 +1,37 @@
+<html lang="en">
+<body>
+
+<div x-data="{ checked: false }">
+	
+	<div id="total" x-text="$wizard.progress().total"></div>
+	<div id="complete" x-text="$wizard.progress().complete"></div>
+	<div id="incomplete" x-text="$wizard.progress().incomplete"></div>
+	<div id="percentage" x-text="$wizard.progress().percentage"></div>
+	
+	<div x-wizard:step="checked === true">
+		Step 1
+		<input id="checked-input" type="checkbox" x-model="checked" />
+	</div>
+	
+	<div x-wizard:step>
+		Step 2
+	</div>
+	
+	<div x-wizard:step x-wizard:if="false">
+		Non-applicable step
+	</div>
+	
+	<div x-wizard:step>
+		Step 3
+	</div>
+	
+	<button id="back-button" @click="$wizard.back()">Back</button>
+	<button id="forward-button" @click="$wizard.forward()">Forward</button>
+
+</div>
+
+<script src="../../dist/wizard.cdn.js"></script>
+<script src="../../node_modules/alpinejs/dist/cdn.js"></script>
+
+</body>
+</html>

@@ -11,6 +11,8 @@ allow you to quickly build multi-step wizards using Alpine.js (only 1.1 kB gzipp
   - [Using Validation Rules](#validation-rules)
   - [API](#api)
 
+![x-wizard-github](https://user-images.githubusercontent.com/21592/174309614-a7604beb-b4ca-4add-a468-28f8fcc4a48b.gif)
+
 ## Installation
 
 ### via cdn

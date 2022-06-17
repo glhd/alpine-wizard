@@ -1,6 +1,6 @@
 {
   "name": "@glhd/alpine-wizard",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Multi-step wizard helpers for Alpine.js",
   "main": "dist/wizard.cjs.js",
   "module": "dist/wizard.esm.js",

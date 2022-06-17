@@ -136,10 +136,13 @@ a number of useful helper functions:
   - `next()` — get the next wizard step (or null if at end)
   - `previous()` — get the previous wizard step (or null if at beginning)
   - `progress()` — get current progress, a JS object:
+    - `current` — the current step number (as of 1.2.0)
     - `total` — the total number of applicable steps
     - `complete` — the number of completed steps
     - `incomplete` — the number of steps still to complete
     - `percentage` — the percent complete, as a string (i.e. `"33%"`)
+    - `percentage_int` — the percent complete, as an integer (i.e. `33`) (as of 1.2.0)
+    - `percentage_float` — the percent complete, as an float (i.e. `0.33`) (as of 1.2.0)
   - `isFirst()` — check if we're currently on the first step
   - `isNotFirst()` — check if we're NOT currently on the first step
   - `isLast()` — check if we're on the last step

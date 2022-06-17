@@ -3,10 +3,27 @@
 
 <div x-data="{ checked: false }">
 	
-	<div id="total" x-text="$wizard.progress().total"></div>
-	<div id="complete" x-text="$wizard.progress().complete"></div>
-	<div id="incomplete" x-text="$wizard.progress().incomplete"></div>
-	<div id="percentage" x-text="$wizard.progress().percentage"></div>
+	<div>
+		Current: <span id="current" x-text="$wizard.progress().current"></span>
+	</div>
+	<div>
+		Total: <span id="total" x-text="$wizard.progress().total"></span>
+	</div>
+	<div>
+		Complete: <span id="complete" x-text="$wizard.progress().complete"></span>
+	</div>
+	<div>
+		Incomplete: <span id="incomplete" x-text="$wizard.progress().incomplete"></span>
+	</div>
+	<div>
+		Percentage: <span id="percentage" x-text="$wizard.progress().percentage"></span>
+	</div>
+	<div>
+		Percentage (int): <span id="percentage_int" x-text="$wizard.progress().percentage_int"></span>
+	</div>
+	<div>
+		Percentage (float): <span id="percentage_float" x-text="$wizard.progress().percentage_float"></span>
+	</div>
 	
 	<div x-wizard:step="checked === true">
 		Step 1

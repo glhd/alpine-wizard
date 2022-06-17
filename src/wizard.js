@@ -91,9 +91,13 @@ const initWizardRoot = (Alpine) => {
 			return findNextIndex(this.steps, this.current_index, 1);
 		},
 		progress() {
+			let current = 0;
 			let complete = 0;
 			let total = 0;
 			
+			// We need to compute most of these dynamically, because the values used
+			// for presentation may be different than the "real" values in the step
+			// array (based on which steps apply given the current data).
 			for (let index = 0; index < this.steps.length; index++) {
 				const step = this.steps[index];
 				
@@ -103,15 +107,24 @@ const initWizardRoot = (Alpine) => {
 				
 				total++;
 				
+				if (index <= this.current_index) {
+					current++;
+				}
+				
 				if (index <= this.current_index && step.is_complete) {
 					complete++;
 				}
 			}
 			
-			const incomplete = total - complete;
-			const percentage = `${ Math.floor((complete / total) * 100)}%`;
-			
-			return { total, complete, incomplete, percentage };
+			return { 
+				total, 
+				complete,
+				current,
+				incomplete: total - complete, 
+				percentage: `${ Math.floor((complete / total) * 100) }%`,
+				percentage_int: Math.floor((complete / total) * 100),
+				percentage_float: Math.floor(((complete / total) + Number.EPSILON) * 100) / 100,
+			};
 		},
 		isFirst() {
 			return null === this.previousIndex();

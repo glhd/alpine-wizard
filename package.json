@@ -17,7 +17,8 @@
   "files": [
     "LICENSE",
     "README.md",
-    "dist/"
+    "dist/",
+    "src/types.js"
   ],
   "repository": "https://github.com/glhd/alpine-wizard.git",
   "author": "Chris Morrell <inxilpro@users.noreply.github.com>",
